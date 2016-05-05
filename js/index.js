@@ -36,9 +36,17 @@ $(function() {
     }
 
     // Promises
-    getLocation().then(function(ip) {
+    // call getWeather on data that getLocation returns
+    // ip => getWeather(ip.postal, ip.country)
+    const location = getLocation().then(function(ip) {
+        console.log(ip);
         return getWeather(ip.postal, ip.country);
-    }).then(function(json) {
+    });
+    
+    location.catch(error => console.log(error));
+
+    const weather  =  location.then(function(json) {
+        console.log(json);
 
         let temp = (json.main.temp - 273);
         $('#temperature').html(Math.round(temp));
@@ -83,4 +91,6 @@ $(function() {
         if (condtion == "Extreme")
             $('.weather-icon').attr("src", "http://oi64.tinypic.com/2ngfnk5.jpg");
     });
+
+    weather.catch(error => console.log(error));
 });
