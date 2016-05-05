@@ -42,10 +42,10 @@ $(function() {
         console.log(ip);
         return getWeather(ip.postal, ip.country);
     });
-    
+
     location.catch(error => console.log(error));
 
-    const weather  =  location.then(function(json) {
+    const weather = location.then(function(json) {
         console.log(json);
 
         let temp = (json.main.temp - 273);
