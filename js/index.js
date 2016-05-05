@@ -12,12 +12,9 @@ $(function() {
         return new Promise(function(resolve, reject) {
             let url = 'http://ipinfo.io';
             $.getJSON(url, function(data) {
-                if (!data) {
-                    return reject('Error: ipinfo.io');
-                } else {
-                    resolve(data);
-                }
-            });
+                resolve(data);
+            })
+            .fail(() => reject('Error: ipinfo.io'));
         });
     }
 
@@ -26,11 +23,9 @@ $(function() {
         return new Promise(function(resolve, reject) {
             let url = `http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${country}&appid=${API_KEY}`;
             $.getJSON(url, function(data) {
-                if (!data) {
-                    return reject('Error: .openweathermap');
-                } else {
                     resolve(data);
-                }
+            }).fail(function(){
+                return reject('Error: .openweathermap');
             });
         });
     }

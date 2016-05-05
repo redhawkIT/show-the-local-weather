@@ -1,0 +1,19 @@
+{
+  "name": "show-the-local-weather",
+  "version": "1.0.0",
+  "description": "A Pen created at CodePen.io. You can find this one at http://codepen.io/ChrisWiles/pen/RrObdL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisWiles/show-the-local-weather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisWiles/show-the-local-weather/issues"
+  },
+  "homepage": "https://github.com/ChrisWiles/show-the-local-weather#readme"
+}
